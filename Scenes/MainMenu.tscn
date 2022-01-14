@@ -1,0 +1,253 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Themes/pixel_font.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Scripts/MainMenu.cs" type="Script" id=2]
+[ext_resource path="res://Themes/main_theme.tres" type="Theme" id=3]
+[ext_resource path="res://Themes/new_dynamicfont.tres" type="DynamicFont" id=4]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+
+[node name="root" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 3 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MainMenuPanel" type="Panel" parent="Panel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -328.0
+margin_top = -248.0
+margin_right = 328.0
+margin_bottom = 248.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameNameLabel" type="RichTextLabel" parent="Panel/MainMenuPanel"]
+margin_right = 656.0
+margin_bottom = 40.0
+custom_fonts/normal_font = ExtResource( 1 )
+bbcode_enabled = true
+bbcode_text = "[center]The Bad Clicky Game v0.3[/center]"
+text = "The Bad Clicky Game v0.3"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonContainer" type="VBoxContainer" parent="Panel/MainMenuPanel"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -94.0
+margin_top = -102.0
+margin_right = 94.0
+margin_bottom = 102.0
+custom_constants/separation = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="Panel/MainMenuPanel/ButtonContainer"]
+margin_right = 188.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 1 )
+text = "Play"
+
+[node name="Button2" type="Button" parent="Panel/MainMenuPanel/ButtonContainer"]
+margin_top = 72.0
+margin_right = 188.0
+margin_bottom = 132.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 1 )
+text = "Settings"
+
+[node name="Button3" type="Button" parent="Panel/MainMenuPanel/ButtonContainer"]
+margin_top = 144.0
+margin_right = 188.0
+margin_bottom = 204.0
+rect_min_size = Vector2( 0, 60 )
+custom_fonts/font = ExtResource( 1 )
+text = "Quit"
+
+[node name="DifficultyButton" type="OptionButton" parent="Panel/MainMenuPanel"]
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -144.0
+margin_top = -104.0
+margin_right = -26.0
+margin_bottom = -66.0
+custom_fonts/font = ExtResource( 1 )
+text = "Easy"
+items = [ "Easy", null, false, 0, false, "Normal", null, false, 0, false, "Hard", null, false, 0, false, "OneShot", null, false, 0, false ]
+selected = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SettingPanel" type="Panel" parent="Panel"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -176.0
+margin_top = -236.0
+margin_right = 176.0
+margin_bottom = 236.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/SettingPanel"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -116.0
+margin_right = 116.0
+margin_bottom = 40.0
+bbcode_enabled = true
+bbcode_text = "[center]Settings[/center]"
+text = "Settings"
+
+[node name="HorizontalSensSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 144.0
+margin_right = 328.0
+margin_bottom = 160.0
+min_value = 0.001
+max_value = 2.0
+step = 0.001
+value = 0.001
+
+[node name="VerticalSensSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 176.0
+margin_right = 328.0
+margin_bottom = 192.0
+min_value = 0.001
+max_value = 2.0
+step = 0.001
+value = 0.001
+
+[node name="KillVolumeSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 208.0
+margin_right = 328.0
+margin_bottom = 224.0
+min_value = -80.0
+max_value = 0.0
+step = 0.5
+value = -20.0
+
+[node name="ShootVolumeSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 240.0
+margin_right = 328.0
+margin_bottom = 256.0
+min_value = -80.0
+max_value = 0.0
+step = 0.5
+value = -20.0
+
+[node name="DeathVolumeSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 272.0
+margin_right = 328.0
+margin_bottom = 288.0
+min_value = -80.0
+max_value = 0.0
+step = 0.5
+value = -20.0
+
+[node name="MusicVolumeSlider" type="HSlider" parent="Panel/SettingPanel"]
+margin_left = 136.0
+margin_top = 304.0
+margin_right = 328.0
+margin_bottom = 320.0
+min_value = -80.0
+max_value = 0.0
+step = 0.5
+value = -20.0
+
+[node name="CloseButton" type="Button" parent="Panel/SettingPanel"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -32.0
+margin_top = -32.0
+margin_right = 32.0
+text = "close"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 136.0
+margin_right = 128.0
+margin_bottom = 176.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "XSens"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 168.0
+margin_right = 128.0
+margin_bottom = 208.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "YSens"
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 200.0
+margin_right = 136.0
+margin_bottom = 240.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Kill Vol"
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 232.0
+margin_right = 136.0
+margin_bottom = 272.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Shoot Vol"
+
+[node name="RichTextLabel6" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 264.0
+margin_right = 136.0
+margin_bottom = 304.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Death Vol"
+
+[node name="RichTextLabel7" type="RichTextLabel" parent="Panel/SettingPanel"]
+margin_left = 16.0
+margin_top = 296.0
+margin_right = 136.0
+margin_bottom = 336.0
+custom_fonts/normal_font = ExtResource( 4 )
+text = "Music Vol"

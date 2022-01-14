@@ -1,0 +1,26 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/EnemyDeathParticle.cs" type="Script" id=1]
+
+[sub_resource type="Gradient" id=2]
+colors = PoolColorArray( 0.95752, 0.617509, 0.142132, 1, 0.633301, 0, 0, 1 )
+
+[node name="EnemyDeathParticles" type="CPUParticles2D" groups=["Enemies"]]
+z_index = -1
+emitting = false
+amount = 100
+lifetime = 0.35
+randomness = 0.41
+fixed_fps = 60
+emission_shape = 1
+emission_sphere_radius = 2.0
+spread = 180.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.5
+linear_accel = 100.0
+linear_accel_random = 0.5
+scale_amount = 8.0
+scale_amount_random = 0.35
+color_ramp = SubResource( 2 )
+script = ExtResource( 1 )

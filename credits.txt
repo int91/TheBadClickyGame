@@ -4,10 +4,9 @@ Art - c_onvulse
 Sfx - Yaru Retro Sfx
 Music - David Renda, Eric Skiff
 
+#Include on itch page
+Music: Eric Skiff - Ascending - Resistor Anthems - Available at http://EricSkiff.com/music
+
 Songs:
 Game Background - Ascending by Eric Skiff
 Menu Background - 8 Bit Menu by David Renda
-
-
-#Include on itch page
-Music: Eric Skiff - Ascending - Resistor Anthems - Available at http://EricSkiff.com/music

@@ -24,6 +24,7 @@ namespace TheBadClickyGame
 
         AudioStream menuMusicStream;
         AudioStreamPlayer musicPlayer;
+
         public override void _Ready()
         {
             pd = GetNode<PlayerData>("/root/PD");
@@ -61,11 +62,13 @@ namespace TheBadClickyGame
             deathSlider.Connect("value_changed", this, "_on_DeathSlider_value_changed");
             musicSlider.Connect("value_changed", this, "_on_MusicSlider_value_changed");
 
+            pd.LoadSettings();
+            pd.LoadHighScores();
             xSensSlider.Value = pd.sensitivity.x;
             ySensSlider.Value = pd.sensitivity.y;
             xSens.Text = "X: " + pd.sensitivity.x;
             ySens.Text = "Y: " + pd.sensitivity.y;
-            difficultyButton.Select((int)pd.diff);
+            difficultyButton.Select(pd.diffInt);
             killSlider.Value = pd.killVolume;
             shootSlider.Value = pd.shootVolume;
             deathSlider.Value = pd.gameoverVolume;
@@ -80,6 +83,7 @@ namespace TheBadClickyGame
 
         public void on_CloseSettingsButton_pressed()
         {
+            pd.SaveSettings();
             menuPanel.Show();
             settingsPanel.Hide();
         }

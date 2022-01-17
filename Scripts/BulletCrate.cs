@@ -3,15 +3,17 @@ using System;
 
 namespace TheBadClickyGame
 {
-    public class Enemy : Entity
+    public class BulletCrate : Entity
     {
         //public Game gameController;
         //public float spd;
+        //private Vector2 dir;
         public Sprite spriteNode;
         public Texture sprite;
         public override void _Ready()
         {
             this.spd = 270f;
+            this.sprite = (Texture)GD.Load("res://Sprites/bullet_crate_placeholder.png");
             //this.dir = new Vector2(0, 1);
             this.spriteNode = GetNode<Sprite>("Sprite");
             if (this.sprite != null)

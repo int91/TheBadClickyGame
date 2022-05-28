@@ -48,15 +48,16 @@ namespace TheBadClickyGame
             statsLabel = GetNode<RichTextLabel>("GUI/StatsLabel");
             deathPanel = (DeathPanel)GetNode<Panel>("DeathPanel");
             deathPanel.gameController = this;
-            enemyMediumSprites = new Texture[2];
+            enemyMediumSprites = new Texture[3];
             enemyMediumSprites[0] = (Texture)GD.Load("res://Sprites/space_ship_1.png");
             enemyMediumSprites[1] = (Texture)GD.Load("res://Sprites/space_ship_2.png");
+            enemyMediumSprites[2] = (Texture)GD.Load("res://Sprites/space_ship_3.png");
             bulletSpawnTime = 3.0f;
             SetupAudio();
             SetupCrosshair();
             SetupKillArea();
             CheckDifficulty();
-            CreateBulletCrateTimer();
+            //CreateBulletCrateTimer();
             CreateEnemySpawnTimer();
             Input.SetMouseMode(Input.MouseMode.Captured);
             musicPlayer.Play();
@@ -108,7 +109,7 @@ namespace TheBadClickyGame
             pd.EndGame(points);
             statsLabel.Hide();
             enemySpawnTimer.Stop();
-            bulletSpawnTimer.Stop();
+            //bulletSpawnTimer.Stop();
             GetTree().CallGroup("Enemies", "Kill");
         }
 
@@ -175,7 +176,7 @@ namespace TheBadClickyGame
         {
             Enemy enem = (Enemy)enemyScene.Instance();
             int shipSize = rng.RandiRange(1, 2);
-            int spriteIndex = rng.RandiRange(0, 1);
+            int spriteIndex = rng.RandiRange(0, 2);
             switch (shipSize)
             {
                 case 0:
@@ -205,7 +206,7 @@ namespace TheBadClickyGame
         {
             Enemy enem = (Enemy)enemyScene.Instance();
             int shipSize = rng.RandiRange(0, 1);
-            int spriteIndex = rng.RandiRange(0, 1);
+            int spriteIndex = rng.RandiRange(0, 2);
             switch (shipSize)
             {
                 case 0:
@@ -243,7 +244,7 @@ namespace TheBadClickyGame
         {
             Enemy enem = (Enemy)enemyScene.Instance();
             int shipSize = rng.RandiRange(0, 2);
-            int spriteIndex = rng.RandiRange(0, 1);
+            int spriteIndex = rng.RandiRange(0, 2);
             switch (shipSize)
             {
                 case 0:
@@ -278,7 +279,7 @@ namespace TheBadClickyGame
         {
             Enemy enem = (Enemy)enemyScene.Instance();
             int shipSize = rng.RandiRange(0, 3);
-            int spriteIndex = rng.RandiRange(0, 1);
+            int spriteIndex = rng.RandiRange(0, 2);
             switch (shipSize)
             {
                 case 0:
@@ -453,7 +454,7 @@ namespace TheBadClickyGame
             musicPlayer.Play();
             CheckDifficulty();
             enemySpawnTimer.Start(spawnTime);
-            bulletSpawnTimer.Start(bulletSpawnTime);
+            //bulletSpawnTimer.Start(bulletSpawnTime);
             deathPanel.Hide();
             statsLabel.Show();
             Input.SetMouseMode(Input.MouseMode.Captured);

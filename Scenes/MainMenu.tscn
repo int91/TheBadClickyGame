@@ -50,13 +50,14 @@ margin_right = 656.0
 margin_bottom = 40.0
 custom_fonts/normal_font = ExtResource( 1 )
 bbcode_enabled = true
-bbcode_text = "[center]The Bad Clicky Game v0.3[/center]"
-text = "The Bad Clicky Game v0.3"
+bbcode_text = "[center]The Bad Clicky Game v0.9[/center]"
+text = "The Bad Clicky Game v0.9"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="GameNameLabel2" type="RichTextLabel" parent="Panel/MainMenuPanel"]
+visible = false
 margin_top = 28.0
 margin_right = 656.0
 margin_bottom = 68.0
